@@ -1,3 +1,6 @@
+// Variables de entorno
+require ('dotenv').config();
+
 // Constantes
 const express = require("express");
 const app = express();
@@ -55,4 +58,5 @@ app.get("/panel", [validarUsuario], (req, res) => {
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);
+    console.log(process.env.DB_PASSWORD);
 });
