@@ -2,10 +2,10 @@
   "name": "arg-programa-tramo3",
   "version": "1.0.0",
   "description": "",
-  "main": "servidorExpress.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node servidorExpress",
-    "dev": "nodemon servidorExpress"
+    "start": "node src/server",
+    "dev": "nodemon src/server"
   },
   "author": "",
   "license": "ISC",
