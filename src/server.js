@@ -6,10 +6,6 @@ const userRouter = require('./routes/usersRoutes')
 const app = express();
 const port = 4000;
 
-app.get("/", (req, res) => {
-    res.send("Hola mundo!");
-});
-
 app.use(userRouter);
 
 app.listen(port, () => {
