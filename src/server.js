@@ -7,6 +7,8 @@ const fileUpload = require('express-fileupload')
 const userRouter = require('./routes/usersRoutes');
 const authRouter = require('./routes/authRoutes');
 const fileRouter = require('./routes/fileRoutes')
+const georefRouter = require('./routes/georefRoutes')
+
 const app = express();
 const port = 4000;
 
@@ -18,6 +20,7 @@ app.use(fileUpload());
 app.use(userRouter);
 app.use(authRouter);
 app.use(fileRouter);
+app.use(georefRouter);
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);
