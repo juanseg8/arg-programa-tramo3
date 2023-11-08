@@ -9,7 +9,7 @@ const authRouter = require('./routes/authRoutes');
 const app = express();
 const port = 4000;
 
-// Middlewar Se pone arriba antes de todas las rutas
+// Middleware Se pone arriba antes de todas las rutas
 app.use(bodyParser.json());
 
 app.use(userRouter);
