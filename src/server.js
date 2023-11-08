@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 
+const {dataBase} = require('./config/sequelizeConfig')
+
 const userRouter = require('./routes/usersRoutes');
 const authRouter = require('./routes/authRoutes');
 const fileRouter = require('./routes/fileRoutes')
@@ -24,4 +26,5 @@ app.use(georefRouter);
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);
+    dataBase();
 });

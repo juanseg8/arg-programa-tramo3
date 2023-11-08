@@ -1,34 +1,44 @@
+const UsuarioModelo1 = require('../models/usersModels1')
 
 const userControllers = {}
 
 const lista_usuarios = [
-    {nombre: "Juan"},
-    {nombre: "Pedro"}
+    { nombre: "Juan" },
+    { nombre: "Pedro" }
 ];
 
 // Ver usuarios
-userControllers.viewUsers = (req, res) => {
-    return res.json(lista_usuarios);
+userControllers.viewUsers = async (req, res) => {
+    try {
+        const listaUsuarios = await UsuarioModelo1.findAll()
+        return res.json(listaUsuarios);
+    } catch (error) {
+        return res.status(500).json({
+            mensaje: 'Ocurrio un error interno',
+            error: error
+        })
+    }
+
 }
 
 // Ver usuario  
-userControllers.viewUser = (req,res) => {
-    return res.json({mensaje: 'Ruta ver un usuario'});
+userControllers.viewUser = (req, res) => {
+    return res.json({ mensaje: 'Ruta ver un usuario' });
 }
 
 // Crear usuario
-userControllers.createUser = (re1,res) => {
-    return res.json({mensaje: 'Ruta crear un usuario'});
+userControllers.createUser = (re1, res) => {
+    return res.json({ mensaje: 'Ruta crear un usuario' });
 }
 
 // Editar usuario
-userControllers.delateUser = (req,res) => {
-    return res.json({mensaje: 'Ruta eliminar un usuario'});
+userControllers.delateUser = (req, res) => {
+    return res.json({ mensaje: 'Ruta eliminar un usuario' });
 }
 
 // Eliminar usuario
-userControllers.editUSer = (req,res) => {
-    return res.json({mensaje: 'Ruta editar usuario'});
+userControllers.editUSer = (req, res) => {
+    return res.json({ mensaje: 'Ruta editar usuario' });
 }
 
 module.exports = userControllers
