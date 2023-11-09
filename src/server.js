@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 
 const {dataBase} = require('./config/sequelizeConfig')
+const conectarMongo = require('./config/mongooseConfig')
 
 const userRouter = require('./routes/usersRoutes');
 const authRouter = require('./routes/authRoutes');
@@ -26,5 +27,6 @@ app.use(georefRouter);
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);
-    dataBase();
+    // dataBase();
+    conectarMongo()
 });

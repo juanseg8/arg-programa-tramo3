@@ -1,4 +1,4 @@
-const UsuarioModelo1 = require('../models/usersModels1')
+const UsuarioModelo1 = require('../models/usersModels')
 
 const userControllers = {}
 
@@ -32,12 +32,12 @@ userControllers.createUser = (re1, res) => {
 }
 
 // Editar usuario
-userControllers.delateUser = (req, res) => {
+userControllers.editUser = (req, res) => {
     return res.json({ mensaje: 'Ruta eliminar un usuario' });
 }
 
 // Eliminar usuario
-userControllers.editUSer = (req, res) => {
+userControllers.delateUser = (req, res) => {
     return res.json({ mensaje: 'Ruta editar usuario' });
 }
 
